@@ -1,1 +1,33 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import 'bootstrap/scss/bootstrap';
+
+body {
+  font-family: 'Inter', sans-serif !important;
+  font-optical-sizing: auto !important;
+}
+
+.card-title {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0;
+  text-align: center;
+  color: #1a2856;
+  margin-bottom: 4px;
+}
+
+.card-subtitle {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0;
+  text-align: center;
+  color: #64848b;
+}
+
+.content-titles {
+  height: 60px;
+  gap: 4px;
+  margin-bottom: 32px;
+}
