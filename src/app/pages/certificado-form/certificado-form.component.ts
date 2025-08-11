@@ -1,11 +1,12 @@
+import { CommonModule } from '@angular/common';
 import { Component, ViewChild } from '@angular/core';
 import { FormsModule, NgForm, NgModel } from '@angular/forms';
+import { Router } from '@angular/router';
+import { v4 as uuidv4 } from 'uuid';
 import { PrimaryButtonComponent } from '../../_components/primary-button/primary-button.component';
 import { SecondaryButtonComponent } from '../../_components/secondary-button/secondary-button.component';
-import { CommonModule } from '@angular/common';
-import { Certificado } from '../../interfaces/certificado';
-import { v4 as uuidv4 } from 'uuid';
 import { CertificadoService } from '../../_services/certificado.service';
+import { Certificado } from '../../interfaces/certificado';
 
 @Component({
   selector: 'app-certificado-form',
@@ -24,7 +25,7 @@ export class CertificadoFormComponent {
 
   @ViewChild('form') form!: NgForm;
 
-  constructor(private certificadoService: CertificadoService) { }
+  constructor(private certificadoService: CertificadoService, private router: Router) { }
 
   campoValido(control: NgModel) {
     return control.invalid && control.touched;
@@ -53,8 +54,10 @@ export class CertificadoFormComponent {
     this.certificado.dataEmissao = this.dataAtual();
     this.certificado.id = uuidv4();
     this.certificadoService.adicionarCertificado(this.certificado);
-    this.certificado = this.estadoInicialCertificado();
-    this.form.resetForm();
+    this.router.navigate(['certificados', this.certificado.id]);
+
+    // this.certificado = this.estadoInicialCertificado();
+    // this.form.resetForm();
   }
 
   dataAtual() {

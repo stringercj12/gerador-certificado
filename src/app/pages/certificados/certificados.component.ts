@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { ItemCertificadoComponent } from "../../_components/item-certificado/item-certificado.component";
 import { Router, RouterLink } from '@angular/router';
+import { ItemCertificadoComponent } from "../../_components/item-certificado/item-certificado.component";
 import { SecondaryButtonComponent } from '../../_components/secondary-button/secondary-button.component';
 import { CertificadoService } from '../../_services/certificado.service';
 import { Certificado } from '../../interfaces/certificado';
