@@ -1,4 +1,4 @@
-.custom-button{
+.custom-button {
   height: 40px;
   padding: 10px 16px;
   border: none;
@@ -11,12 +11,16 @@
   display: flex;
   align-items: center;
   font-weight: 600;
-}
 
-.custom-button:hover{
-  opacity: 90%;
-}
+  &:hover {
+    opacity: 90%;
+  }
 
-.custom-button i {
-  font-size: 20px;
+  &:disabled {
+    opacity: 50%;
+  }
+
+  i {
+    font-size: 20px;
+  }
 }

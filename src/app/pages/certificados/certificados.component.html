@@ -4,16 +4,20 @@
     <p class="mb-4 custom-subtitle">Visualize todos os certificados gerados</p>
   </div>
 
-  <!-- <div class="custom-card w-100">
+  @for (certificado of certificados; track $index) {
+  <div class="list-certificates w-100">
+    <app-item-certificado [id]="certificado.id" [nomeAluno]="certificado.nome"
+      [dataEmissao]="certificado.dataEmissao"></app-item-certificado>
+  </div>
+  }@empty {
+  <div class="custom-card w-100">
     <i class="ph ph-certificate"></i>
     <div class="custom-warning-titles">
       <h3 class="card-title">Nenhum certificado gerado</h3>
       <p class="card-subtitle">Gere certificados para consultar o histórico</p>
     </div>
-    <app-secondary-button></app-secondary-button>
-  </div> -->
-
-  <div class="list-certificates w-100">
-    <app-item-certificado></app-item-certificado>
+    <app-secondary-button textoBotao="Gerar certificado" routerLink="/certificados/novo"></app-secondary-button>
   </div>
+  }
+
 </div>
