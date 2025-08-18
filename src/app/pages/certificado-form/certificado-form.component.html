@@ -25,10 +25,9 @@
         <input [(ngModel)]="atividade" #atividadeRef="ngModel" name="atividade" maxlength="50" required type="text"
           class="form-control custom-input" id="atividade" placeholder="Atividade exercida" />
       </div>
-      @if(atividade){
       <app-secondary-button [disabled]="!atividade || atividade.length == 0" textoBotao="Adicionar" phClass="ph ph-plus"
         (click)="adicionarAtividade()"></app-secondary-button>
-      }
+
     </div>
     <div class="atividade-group">
       <label class="form-label">Lista de atividades</label>
